@@ -8,7 +8,7 @@
 #ifndef MCAL_UART_UART_H_
 #define MCAL_UART_UART_H_
 
-#include "MCAL/EXTI/EXTI.h"
+#include "../EXTI/EXTI.h"
 
 #define USART_RXC_vect __vector_13
 #define USART_UDRE_vect __vector_14

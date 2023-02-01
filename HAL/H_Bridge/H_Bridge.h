@@ -7,7 +7,7 @@
 
 #ifndef HAL_H_BRIDGE_H_BRIDGE_H_
 #define HAL_H_BRIDGE_H_BRIDGE_H_
-#include "MCAL/DIO/DIO.h"
+#include "../../MCAL/DIO/DIO.h"
 #define ConnectionsToGroundAndVoltage 0
 #define BidirectionalDCMotorControl 1
 

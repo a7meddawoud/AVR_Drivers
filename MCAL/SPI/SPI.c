@@ -20,7 +20,7 @@ void SPI_vInit(){
 		SET_BIT(DDRB,6);
 		CLR_BIT(DDRB,7);
 	#elif SPIMode==SPIMaster
-		SPCR=0b00110100;
+		SPCR=0b00110000|SPIPrescaler;
 		CLR_BIT(SPSR,0);
 		SET_BIT(DDRB,4);
 		SET_BIT(DDRB,5);

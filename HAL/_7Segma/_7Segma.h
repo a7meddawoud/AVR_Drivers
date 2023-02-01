@@ -9,7 +9,7 @@
 
 #ifndef _7SEGMA_H_
 #define _7SEGMA_H_
-#include "MCAL/DIO/DIO.h"
+#include "../../MCAL/DIO/DIO.h"
 
 void _7Segma_vInit();
 void _7Segma_vEnable1();

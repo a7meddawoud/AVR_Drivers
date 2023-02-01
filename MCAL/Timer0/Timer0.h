@@ -9,7 +9,7 @@
 #define MCAL_TIMER0_TIMER0_H_
 
 #include "../EXTI/EXTI.h"
-#include "MCAL/Timer0/Config_Timer0.h"
+#include "Config_Timer0.h"
 
 #define T0NormalMode 0
 #define T0CTCMode 1

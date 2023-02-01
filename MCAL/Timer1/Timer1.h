@@ -9,7 +9,7 @@
 #define MCAL_TIMER1_TIMER1_H_
 
 #include "../EXTI/EXTI.h"
-#include "MCAL/Timer1/Config_Timer1.h"
+#include "Config_Timer1.h"
 
 
 #define T1OverflowMode 0

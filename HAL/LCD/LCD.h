@@ -7,7 +7,7 @@
 
 #ifndef HAL_LCD_LCD_H_
 #define HAL_LCD_LCD_H_
-#include "MCAL/DIO/DIO.h"
+#include "../../MCAL/DIO/DIO.h"
 #define LineOne 0x80
 #define LineTwo 0xC0
 #define FunctionSet 0b00101000

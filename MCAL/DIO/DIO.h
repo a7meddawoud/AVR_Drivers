@@ -18,8 +18,8 @@
 #include <util/delay.h>
 
 #include "../macros.h"
-#include "MCAL/MCU.h"
-#include "MCAL/types.h"
+#include "../MCU.h"
+#include "../types.h"
 
 /**********************************************************************************************************************
  *  GLOBAL CONSTANT MACROS

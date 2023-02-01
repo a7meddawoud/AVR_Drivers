@@ -9,24 +9,18 @@
  */
 #include <stdio.h>
 #include "avr\io.h"
-#include "APP/APP.h"
-#include "HAL/H_Bridge/H_Bridge.h"
-#include "MCAL/SPI/SPI.h"
-#include "MCAL/Timer0/Timer0.h"
-#include "MCAL/Timer1/Timer1.h"
+#include "APP.h"
+#include "../HAL/H_Bridge/H_Bridge.h"
+#include "../MCAL/SPI/SPI.h"
+#include "../MCAL/Timer0/Timer0.h"
+#include "../MCAL/Timer1/Timer1.h"
 /*void TEST();
 u16 z;
 u8 arr[6];*/
 /*void Test2();
 u16 counter=0;*/
 int main(void){
-	//SET_BIT(DDRC,1);
-	//SET_BIT(DDRC,0);
 
-//	SET_BIT(TWCR,6);
-	CLR_BIT(TWSR,0);
-	CLR_BIT(TWSR,1);
-	TWBR=0x0C;
 	while(1){
 		while((GET_BIT(TWCR,7) !=0));
 		SET_BIT(TWCR,2);

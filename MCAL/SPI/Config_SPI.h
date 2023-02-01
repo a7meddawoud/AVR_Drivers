@@ -10,5 +10,5 @@
 
 #define SPIMode1 SPIPolling
 #define SPIMode SPIMaster
-
+#define SPIPrescaler SPIPrescaler2
 #endif /* MCAL_SPI_CONFIG_SPI_H_ */

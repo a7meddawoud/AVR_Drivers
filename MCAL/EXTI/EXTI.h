@@ -8,8 +8,8 @@
 #ifndef MCAL_EXTI_EXTI_H_
 #define MCAL_EXTI_EXTI_H_
 #include "../macros.h"
-#include "MCAL/MCU.h"
-#include "MCAL/types.h"
+#include "../MCU.h"
+#include "../types.h"
 
 #  define ISR(vector, ...)            \
     void vector (void) __attribute__ ((signal,__INTR_ATTRS)) __VA_ARGS__; \
