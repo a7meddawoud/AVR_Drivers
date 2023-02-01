@@ -12,10 +12,21 @@ void(*Uptr2)(void)='\0';
 void(*Uptr3)(void)='\0';
 
 void UART_vInit(){
-	UBRRL=103;
+#if UARTMode==UARTInturrept
+	UBRRL=BaudRateRegisters;
 	SET_BIT(UCSRB,3);
 	SET_BIT(UCSRB,4);
 	UCSRC=0b10000110;
+
+	SET_BIT(UCSRB,7);
+	SET_BIT(UCSRB,6);
+	SET_BIT(UCSRB,5);
+#elif UARTMode==UARTPolling
+	UBRRL=BaudRateRegisters;
+	SET_BIT(UCSRB,3);
+	SET_BIT(UCSRB,4);
+	UCSRC=0b10000110;
+#endif
 }
 void UART_vSendChar(u8 Loc_SendChar){
 	while(GET_BIT(UCSRA,6));
@@ -24,15 +35,6 @@ void UART_vSendChar(u8 Loc_SendChar){
 u8 UART_u8RecieveChar(){
 	while(!(GET_BIT(UCSRA,7)));
 	return UDR;
-}
-void UART_vRXCompleteInterruptEnable(){
-	SET_BIT(UCSRB,7);
-}
-void UART_vTXCompleteInterruptEnable(){
-	SET_BIT(UCSRB,6);
-}
-void UART_vDataRegisterEmptyInterruptEnable(){
-	SET_BIT(UCSRB,5);
 }
 void UART_RXCompleteCallBack(void(*ptr1)(void)){
 	if(ptr1!='\0'){

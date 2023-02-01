@@ -4,12 +4,15 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../HAL/KEYPAD/Config_KEYPAD.c \
 ../HAL/KEYPAD/KEYPAD.c 
 
 OBJS += \
+./HAL/KEYPAD/Config_KEYPAD.o \
 ./HAL/KEYPAD/KEYPAD.o 
 
 C_DEPS += \
+./HAL/KEYPAD/Config_KEYPAD.d \
 ./HAL/KEYPAD/KEYPAD.d 
 
 

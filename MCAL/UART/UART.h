@@ -9,6 +9,10 @@
 #define MCAL_UART_UART_H_
 
 #include "../EXTI/EXTI.h"
+#include "Config_UART.h"
+
+#define UARTInturrept 0
+#define UARTPolling 1
 
 #define USART_RXC_vect __vector_13
 #define USART_UDRE_vect __vector_14
@@ -17,9 +21,7 @@
 void UART_vInit();
 void UART_vSendChar(u8 Loc_SendChar);
 u8 UART_u8RecieveChar();
-void UART_vRXCompleteInterruptEnable();
-void UART_vTXCompleteInterruptEnable();
-void UART_vDataRegisterEmptyInterruptEnable();
+
 void UART_RXCompleteCallBack(void(*ptr1)(void));
 void UART_TXCompleteCallBack(void(*ptr2)(void));
 void UAART_DataRegisterEmptyCallBack(void(*ptr3)(void));
