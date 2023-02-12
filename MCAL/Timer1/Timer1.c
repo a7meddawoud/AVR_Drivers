@@ -48,7 +48,7 @@ void Timer1_vInit(){
 void Timer1_vIputCaptureUnit(u32* duty,u32* Frequency){
 	if(T1Flag==3){
 		*duty=(u32)(((T1TimeOn+(T1OnCounts*65536))*100)/(T1TimeTotal)+(T1TotalCounts*65536));
-		*Frequency=(u32)(T1SystemFrequency/((T1TimeTotal+(T1TotalCounts*65536))*T1Prescaler));
+		*Frequency=(u32)(T1SystemFrequency/((T1TimeTotal+(T1TotalCounts*65536))*T1InputCalcPrescaler));
 	}
 }
 void Timer1_vOverflowCounter(){
@@ -114,6 +114,10 @@ u16 Timer1_vReadInputCaptureRegister(){
 void Timer1_vPreLoadResgister(u16 Loc_val){
 	TCNT1H=(Loc_val>>8);
 	TCNT1L=Loc_val;
+}
+void Timer1_vWriteICR1(u16 Loc_val){
+	ICR1H=(Loc_val>>8);
+	ICR1L=Loc_val;
 }
 void Timer1_vChannelACopmareRegister(u16 Loc_val){
 	OCR1AH=(Loc_val>>8);

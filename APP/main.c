@@ -8,41 +8,92 @@
  *      PushButtons functions are used to choose which APP function will run
  */
 #include <stdio.h>
-#include "avr\io.h"
+//#include "avr\io.h"
 #include "APP.h"
+#include "../HAL/LCD/LCD.h"
 #include "../HAL/H_Bridge/H_Bridge.h"
 #include "../MCAL/SPI/SPI.h"
-#include "../MCAL/Timer0/Timer0.h"
 #include "../MCAL/Timer1/Timer1.h"
+#include "../MCAL/Timer0/Timer0.h"
+#include "../MCAL/I2C/I2C.h"
+#include "../services/Operating_System/OS.h"
 /*void TEST();
 u16 z;
 u8 arr[6];*/
-/*void Test2();
-u16 counter=0;*/
+//void Test2();
+u32 counter=0;
+void Task1(void);
+void Task2(void);
+void Task3(void);
+
 int main(void){
+	SET_BIT(DDRD,3);
+	SET_BIT(DDRC,2);
+	SET_BIT(DDRC,7);
+	//SET_BIT(PORTC,7);
 
+	OS_AddTask(0,2,Task1);
+	OS_AddTask(1,3,Task2);
+	OS_AddTask(2,4,Task3);
+	OS_StartScheduler();
+	OS_vInit();
 	while(1){
-		while((GET_BIT(TWCR,7) !=0));
-		SET_BIT(TWCR,2);
 
-		SET_BIT(TWCR,5);
-		CLR_BIT(TWCR,7);
-		while((GET_BIT(TWCR,7) !=0));
-		SET_BIT(TWCR,2);
 
-		TWDR=0b00000010; //frist bit is for read or write
-		CLR_BIT(TWCR,7);
-		while((GET_BIT(TWCR,7) !=0));
-		SET_BIT(TWCR,2);
-
-		TWDR='A';
-		CLR_BIT(TWCR,7);
-		while((GET_BIT(TWCR,7) !=0));
-		SET_BIT(TWCR,2);
-
-		SET_BIT(TWCR,4);
-		CLR_BIT(TWCR,7);
 	}
+	/*	//EEprom
+	LCD_vInit();
+	I2C_vInit();
+	u8 counter=0;
+	u8 t2=0;
+	u8 arr[4];
+	u8 arr2[4];
+	LCD_vWriteCharacter('A');
+	while(1){
+		if(PushButton_u8Button2()){
+			counter++;
+		}
+		I2C_vSendStart();
+		I2C_vSendSlaveAdress(0b10101001);
+		I2C_SendData(0);
+		I2C_SendData(counter);
+			SET_BIT(DDRC,2);
+			SET_BIT(PORTC,2);
+		I2C_vSendStop();
+
+			SET_BIT(DDRC,7);
+			SET_BIT(PORTC,7);
+		_delay_ms(10);
+		LCD_vInit();
+
+		I2C_vSendStart();
+			SET_BIT(DDRD,3);
+			SET_BIT(PORTD,3);
+		I2C_vSendSlaveAdress(0b10101001);
+		I2C_SendData(0);
+
+		I2C_vRepeatedSendStart();
+
+		I2C_vSendSlaveAdress(0b00000000);
+		I2C_vReadData(&t2);
+		I2C_vSendStop();
+		APP_vToString(arr,t2);
+		APP_vToString(arr2,counter);
+		LCD_vGoTo(LineOne,0);
+		LCD_vWriteString(arr);
+		LCD_vGoTo(LineTwo,0);
+		LCD_vWriteString(arr2);
+	}*/
+	/*
+	 //I2C
+	I2C_vInit();
+	while(1){
+	I2C_vSendStart();
+	I2C_vSendSlaveAdress(0b00000010);
+	I2C_SendData('A');
+	I2C_vSendStop();
+
+	}*/
 	/*
 	SPI_vInit();
 	while(1){
@@ -82,20 +133,24 @@ int main(void){
 	}*/
 	// UART
 
-//	while(1){
-//
-//	}
+	//	while(1){
+	//
+	//	}
 	/*
-	 * servo Control
+	// * servo Control
 	Timer1_vInit();
 	while(1){
 		if(PushButton_u8Button2()){
-			Timer1_vInputCaptureRegister(40000);
+			Timer1_vWriteICR1(40000);
 			Timer1_vChannelACopmareRegister(2000);
 		}
 		else if(PushButton_u8Button1()){
-			Timer1_vInputCaptureRegister(40000);
+			Timer1_vWriteICR1(40000);
 			Timer1_vChannelACopmareRegister(4000);
+		}
+		else if(PushButton_u8Button0()){
+			Timer1_vWriteICR1(40000);
+			Timer1_vChannelACopmareRegister(3000);
 		}
 	}*/
 	/*
@@ -213,9 +268,12 @@ int main(void){
 
 	//-------- LCD
 
-	/*		u8 chr[]="Ahmed";
-		APP_vWriteStringManyTimesLCD(chr,sizeof(chr)); */
+	/*	u8 chr[]="Ahmed";
+		APP_vWriteStringManyTimesLCD(chr,sizeof(chr));
+		while(1){
 
+		}
+	 */
 	// --------7Segma
 	/*	if(PushButton_u8Button1()){
 			APP_vPrint0to99();
@@ -272,4 +330,13 @@ void Test2(){
 	}
 }
  */
+void Task1(){
+	TOG_BIT(PORTD,3);
+}
+void Task2(){
+	TOG_BIT(PORTC,2);
+}
+void Task3(){
+	TOG_BIT(PORTC,7);
 
+}

@@ -9,6 +9,6 @@
 #define MCAL_TIMER0_CONFIG_TIMER0_H_
 
 #define Timer0_Mode				T0CTCMode
-#define Timer0Prescaler			T0PreSclaer64
+#define Timer0Prescaler			T0PreSclaer1024
 
 #endif /* MCAL_TIMER0_CONFIG_TIMER0_H_ */

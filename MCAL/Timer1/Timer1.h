@@ -32,6 +32,7 @@
 
 void Timer1_vInit();
 void Timer1_vPreLoadResgister(u16 Loc_val);
+void Timer1_vWriteICR1(u16 Loc_val);
 void Timer1_vChannelACopmareRegister(u16 Loc_val);
 void Timer1_vChannelBCopmareRegister(u16 Loc_val);
 void Timer1_vOverflowCounter();

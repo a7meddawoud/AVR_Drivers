@@ -14,6 +14,8 @@
 #include "../HAL/LCD/LCD.h"
 #include "../HAL/PushButtons/PushButtons.h"
 #include "../MCAL/ADC/ADC.h"
+
+
 void APP_vPrintNumberSS(u8 loc_u8SegmaPrintNumber1, u8 loc_u8SegmaPrintNumber2);
 void APP_vPrintTwoDigitNumberSS(u8 loc_u8SegmaPrintNumber);
 void APP_vPrintDecimalNumberSS(f32 loc_f32SegmaDecimalNumber);

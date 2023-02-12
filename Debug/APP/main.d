@@ -17,10 +17,13 @@ APP/main.o APP/main.o: ../APP/main.c ../APP/APP.h \
   ../APP/../HAL/H_Bridge/H_Bridge.h \
   ../APP/../HAL/H_Bridge/../../MCAL/DIO/DIO.h ../APP/../MCAL/SPI/SPI.h \
   ../APP/../MCAL/SPI/../EXTI/EXTI.h ../APP/../MCAL/SPI/Config_SPI.h \
-  ../APP/../MCAL/Timer0/Timer0.h ../APP/../MCAL/Timer0/../EXTI/EXTI.h \
-  ../APP/../MCAL/Timer0/Config_Timer0.h ../APP/../MCAL/Timer1/Timer1.h \
-  ../APP/../MCAL/Timer1/../EXTI/EXTI.h \
-  ../APP/../MCAL/Timer1/Config_Timer1.h
+  ../APP/../MCAL/Timer1/Timer1.h ../APP/../MCAL/Timer1/../EXTI/EXTI.h \
+  ../APP/../MCAL/Timer1/Config_Timer1.h ../APP/../MCAL/Timer0/Timer0.h \
+  ../APP/../MCAL/Timer0/../EXTI/EXTI.h \
+  ../APP/../MCAL/Timer0/Config_Timer0.h ../APP/../MCAL/I2C/I2C.h \
+  ../APP/../MCAL/I2C/../EXTI/EXTI.h ../APP/../MCAL/I2C/Config_I2C.h \
+  D:\embedded\3_interfacing\medo\MiddleWare\Operating_System\OS.h \
+  D:\embedded\3_interfacing\medo\MiddleWare\Operating_System\/../../MCAL/Timer1/Timer1.h
 
 ../APP/APP.h:
 
@@ -72,14 +75,24 @@ APP/main.o APP/main.o: ../APP/main.c ../APP/APP.h \
 
 ../APP/../MCAL/SPI/Config_SPI.h:
 
+../APP/../MCAL/Timer1/Timer1.h:
+
+../APP/../MCAL/Timer1/../EXTI/EXTI.h:
+
+../APP/../MCAL/Timer1/Config_Timer1.h:
+
 ../APP/../MCAL/Timer0/Timer0.h:
 
 ../APP/../MCAL/Timer0/../EXTI/EXTI.h:
 
 ../APP/../MCAL/Timer0/Config_Timer0.h:
 
-../APP/../MCAL/Timer1/Timer1.h:
+../APP/../MCAL/I2C/I2C.h:
 
-../APP/../MCAL/Timer1/../EXTI/EXTI.h:
+../APP/../MCAL/I2C/../EXTI/EXTI.h:
 
-../APP/../MCAL/Timer1/Config_Timer1.h:
+../APP/../MCAL/I2C/Config_I2C.h:
+
+D:\embedded\3_interfacing\medo\MiddleWare\Operating_System\OS.h:
+
+D:\embedded\3_interfacing\medo\MiddleWare\Operating_System\/../../MCAL/Timer1/Timer1.h:
