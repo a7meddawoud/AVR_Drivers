@@ -36,5 +36,5 @@ MCAL/SPI \
 MCAL/Timer0 \
 MCAL/Timer1 \
 MCAL/UART \
-MiddleWare/Operating_System \
+services/Operating_System \
 

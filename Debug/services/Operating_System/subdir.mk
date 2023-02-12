@@ -4,17 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../MiddleWare/Operating_System/OS.c 
+../services/Operating_System/OS.c 
 
 OBJS += \
-./MiddleWare/Operating_System/OS.o 
+./services/Operating_System/OS.o 
 
 C_DEPS += \
-./MiddleWare/Operating_System/OS.d 
+./services/Operating_System/OS.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-MiddleWare/Operating_System/%.o: ../MiddleWare/Operating_System/%.c MiddleWare/Operating_System/subdir.mk
+services/Operating_System/%.o: ../services/Operating_System/%.c services/Operating_System/subdir.mk
 	@echo 'Building file: $<'
 	@echo 'Invoking: AVR Compiler'
 	avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=16000000UL -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" -c -o "$@" "$<"

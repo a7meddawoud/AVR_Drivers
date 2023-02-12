@@ -22,8 +22,9 @@ APP/main.o APP/main.o: ../APP/main.c ../APP/APP.h \
   ../APP/../MCAL/Timer0/../EXTI/EXTI.h \
   ../APP/../MCAL/Timer0/Config_Timer0.h ../APP/../MCAL/I2C/I2C.h \
   ../APP/../MCAL/I2C/../EXTI/EXTI.h ../APP/../MCAL/I2C/Config_I2C.h \
-  D:\embedded\3_interfacing\medo\MiddleWare\Operating_System\OS.h \
-  D:\embedded\3_interfacing\medo\MiddleWare\Operating_System\/../../MCAL/Timer1/Timer1.h
+  ../APP/../services/Operating_System/OS.h \
+  ../APP/../services/Operating_System/../../MCAL/Timer1/Timer1.h \
+  ../APP/../services/Operating_System/OS_Config.h
 
 ../APP/APP.h:
 
@@ -93,6 +94,8 @@ APP/main.o APP/main.o: ../APP/main.c ../APP/APP.h \
 
 ../APP/../MCAL/I2C/Config_I2C.h:
 
-D:\embedded\3_interfacing\medo\MiddleWare\Operating_System\OS.h:
+../APP/../services/Operating_System/OS.h:
 
-D:\embedded\3_interfacing\medo\MiddleWare\Operating_System\/../../MCAL/Timer1/Timer1.h:
+../APP/../services/Operating_System/../../MCAL/Timer1/Timer1.h:
+
+../APP/../services/Operating_System/OS_Config.h:

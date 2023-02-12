@@ -48,7 +48,7 @@ void KAYPAD_vInit(){
 * \Syntax          : u8 KAYPAD_u8GetKey()
 * \Description     : this function return which button in the keypad is pressed
 *
-* \Sync\Async      : Synchronous
+* \Sync\Async      : Asynchronous
 * \Reentrancy      : Reentrant
 * \Parameters (in) : None
 * \Parameters (out): None
