@@ -243,7 +243,7 @@ void Timer1_vPreLoadResgister(u16 Loc_val){
  * \Description     : used to set a value to the register ICR1
  *
  * \Sync\Async      : Asynchronous
- * \Parameters (in) : Loc_val value of the wanted preload
+ * \Parameters (in) : Loc_val value of the wanted to put in ICR1
  * \Parameters (out): None
  *******************************************************************************/
 void Timer1_vWriteICR1(u16 Loc_val){

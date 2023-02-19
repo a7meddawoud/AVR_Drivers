@@ -1,26 +1,35 @@
+/*
+ * EEPROM.h
+ *
+ *  Created on: Feb 19, 2023
+ *      Author: a7med
+ */
 /**********************************************************************************************************************
  *  FILE DESCRIPTION
  *  -------------------------------------------------------------------------------------------------------------------
- *         File:  <Config_SPI.h>
- *       Created on: Jan 27, 2023
+ *         File:  <EEPROM.h>
+ *       Created on: Feb 19, 2023
  *      Author: a7meddawoud
  *
- *  Description:  <this file is used to chose SPI Mode And prescaler>
+ *  Description:  < EEPROM functions PROTOTYPES and macros>
  *
  *********************************************************************************************************************/
-
-#ifndef MCAL_SPI_CONFIG_SPI_H_
-#define MCAL_SPI_CONFIG_SPI_H_
-
+#ifndef HAL_EEPROM_EEPROM_H_
+#define HAL_EEPROM_EEPROM_H_
 /**********************************************************************************************************************
- *  GLOBAL CONSTANT MACROS
+ * INCLUDES
  *********************************************************************************************************************/
-#define SPIMode1 SPIPolling
-#define SPIMode SPISlave
-#define SPIPrescaler SPIPrescaler2
-#endif /* MCAL_SPI_CONFIG_SPI_H_ */
-
-
+#include "../..//MCAL/I2C/I2C.h"
+#include <util/delay.h>
 /**********************************************************************************************************************
- *  END OF FILE: Config_SPI.h
+ *  GLOBAL FUNCTION PROTOTYPES
+ *********************************************************************************************************************/
+void EEPROM_vINIT();
+void EEPROM_vWrite(u8 page , u8 add ,u8 data);
+void EEPROM_vRead(u8 page , u8 add,u8* data);
+
+
+#endif /* HAL_EEPROM_EEPROM_H_ */
+/**********************************************************************************************************************
+ *  END OF FILE: EEPROM.h
  *********************************************************************************************************************/

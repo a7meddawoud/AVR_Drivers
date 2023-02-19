@@ -21,12 +21,27 @@
 u16 z;
 u8 arr[6];*/
 //void Test2();
+/*
 u32 counter=0;
 void Task1(void);
 void Task2(void);
-void Task3(void);
+void Task3(void);*/
 
 int main(void){
+	I2C_vInit();
+	SET_BIT(DDRA,0);
+
+	while(1){
+		I2C_vSendStart();
+		I2C_vSendSlaveAdressWithWrite(11);
+		I2C_SendData('A');
+		I2C_vSendStop();
+		SET_BIT(PORTA,0);
+		_delay_ms(5000);
+	}
+
+	/*
+	//OS
 	SET_BIT(DDRD,3);
 	SET_BIT(DDRC,2);
 	SET_BIT(DDRC,7);
@@ -40,7 +55,7 @@ int main(void){
 	while(1){
 
 
-	}
+	}*/
 	/*	//EEprom
 	LCD_vInit();
 	I2C_vInit();
@@ -96,8 +111,13 @@ int main(void){
 	}*/
 	/*
 	SPI_vInit();
+	SET_BIT(DDRC,2);
+	u8 xx;
 	while(1){
-		SPI_vMasterWrite('A');
+		SPI_vSlaveRead(&xx);
+		if(xx=='A'){
+			SET_BIT(PORTC,2);
+		}
 	}*/
 	/*//Timer2
 	 * 	TCCR2=0b01101111;
@@ -330,6 +350,9 @@ void Test2(){
 	}
 }
  */
+/*
+ //os
+
 void Task1(){
 	TOG_BIT(PORTD,3);
 }
@@ -339,4 +362,4 @@ void Task2(){
 void Task3(){
 	TOG_BIT(PORTC,7);
 
-}
+}*/
